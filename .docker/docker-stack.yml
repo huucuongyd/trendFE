@@ -1,0 +1,13 @@
+version: "3.7"
+networks:
+  weoja:
+    external: true
+    driver: overlay
+
+services:
+  gateway:
+    image: trends-fe
+    networks:
+      - "weoja"
+    ports:
+      - "3002:80"
