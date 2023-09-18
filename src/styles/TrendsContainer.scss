@@ -1,0 +1,38 @@
+$fontFami: Inter,helvetica,arial,sans-serif;
+
+.trendsBody{
+    padding-left: 96px;
+    padding-top: 10px;
+    font-family: $fontFami;
+    .filterTrends{
+        height: 32px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 24px;
+        .bydate{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+        }
+        .geo{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+        }
+    }
+    .trendsData{
+        .trendsDataByDate{
+            .formatDate{
+                line-height: 20px;
+                font-size: 14px;
+                font-weight: 500px;
+                letter-spacing: 0.1px;
+                font-family: $fontFami;
+                opacity: 0.7;
+            }
+        }
+    }
+}

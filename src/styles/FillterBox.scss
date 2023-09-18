@@ -1,0 +1,36 @@
+.filterBox{
+    padding: 8px 96px;
+    overflow: auto;
+    white-space: nowrap;
+    gap: 24px;
+    font-family: Inter,helvetica,arial,sans-serif;
+    background-color: rgb(242 242 242);
+    display: flex;
+    .geo{
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        cursor: pointer;
+        img{
+            border-radius: 3px;
+        }
+        .textGeo{
+            font-size: 12px;
+            font-weight: 600;
+        }
+    }
+    .safemode{
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .timeset{
+        display: flex;
+        gap: 8px;
+        font-size: 12px;
+        cursor: pointer;
+    }
+}

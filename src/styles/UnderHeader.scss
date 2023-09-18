@@ -1,0 +1,23 @@
+.tabsBox{
+    padding: 4px 96px 9px 32px;
+    display: flex;
+    .ant-tabs-nav-list{
+        display: flex;
+        align-items: center;
+        margin-left: 64px;
+        gap: 8px;
+        .ant-tabs-tab{
+            border-radius: 16px;
+            cursor: pointer;
+            .ant-tabs-tab-btn{
+                display: flex;
+                align-items: center;
+                font-family: Inter,helvetica,arial,sans-serif;
+                font-size: 14px;
+                gap: 8px;
+                padding: 4px 8px;
+            }
+        }
+    }
+    
+}

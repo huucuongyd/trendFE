@@ -1,0 +1,63 @@
+.Header{
+    padding: 12px 96px 0 32px;
+    display: flex;
+    .logo{
+        width: 64px;
+    }
+    .search-container{
+        height: 48px;
+        width: 50vw;
+        min-width: 200px;
+        background-color: rgba(242, 242, 242, 1);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        .paddingleft{
+            width: 16px;
+        }
+        .input{
+            display: flex;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Inter,helvetica,arial,sans-serif;
+            box-sizing: border-box;
+            outline: none;
+            --max-content-width: 672px;
+            --default-border-radius: 8px;
+            input{
+                width: 100%;
+                outline: none;
+                border: none;
+                background:none;
+                flex: 1;
+                height: 100%;
+                border: 0;
+                outline: none;
+                padding: 0;
+                font-size: 16px;
+                border-radius: 8px;
+                box-shadow: none;
+                width: calc(100% - 100px);
+                color: rgba(111, 111, 111, 1);
+            }
+        }
+        .micSvg{
+            width: 54px!important;
+            color: rgba(85, 82, 181, 1);;
+        }
+    }
+    .actionButton{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        --on-surface: rgba(29, 27, 32, 1);
+        font-family: Inter,helvetica,arial,sans-serif;
+        box-sizing: border-box;
+        outline: none;
+        cursor: pointer;
+        gap: 12px;
+        margin-left: auto;
+    }
+}
