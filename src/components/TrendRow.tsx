@@ -37,6 +37,7 @@ const TrendsRow: React.FC<TrendsRow> = (props) => {
             setCurrentIndex(currentIndex - 1);
         }
       };
+
     const itemWidth = 348;
 
     const translateX = -currentIndex * itemWidth;
@@ -58,75 +59,73 @@ const TrendsRow: React.FC<TrendsRow> = (props) => {
                 </div>
             </div>
             <div className="collapse-container" style={{maxHeight:open?`${divHeight}px`:0}}>
-
-                    <div className="collapse-content" ref={divRef} >
-                        <div className="divider"></div>
-                        <div className="newsHeader">
-                            <div className="a">Tin tức liên quan</div>
-                            <div className="b">Xem thêm</div>
-                        </div>
-                        <div className="carousel">
-                            <div className="buttonLeft">
-                                <div className="buttonInside" onClick={() => prevItem()}><ArrowLeft/></div>
-                            </div>
-                            <div className="newsContainer">
-
-                                <div 
-                                    className="newsList"         
-                                    style={{
-                                        transform: `translateX(${translateX}px)`,
-                                        transition: 'transform 0.3s ease',
-                                    }}
-                                    ref={containerRef}
-                                >
-                                    {
-                                        props.data.articles.map((el,index) => {
-                                            return(
-                                                <div className="newsItems" key={index}>
-                                                    <div className="titleNews">
-                                                        <div className="source">
-                                                            <span className="sourceNews">{el.source}</span>
-                                                            <span style={{opacity:'0.5'}}> • </span>
-                                                            <span className="sourceTime">{el.timeAgo}</span>
-                                                        </div>
-                                                        <div className="title">{el.title}</div>
-                                                    </div>
-                                                    {el.image?<img src={el.image.imageUrl}/>:null}
-                                                </div>
-                                            )
-                                        })
-                                    }
-                                </div>
-                            </div>
-                            <div className="buttonRight" onClick={() => nextItem()}>
-                                <div className="buttonInside"><ArrowRight/></div>
-                            </div>
-                        </div>
-                        
-                        {
-                            props.data.relatedQueries.length > 0 ? (
-                                <>
-                                    <div className="divider"></div>
-                                    <div className="connection">
-                                        <div className="text">Từ khóa liên quan</div>
-                                        <div className="relativeKeys">
-                                            {
-                                                props.data.relatedQueries.map((el, index) => {
-                                                    return(
-                                                        <div key={index} className="relativeKey">
-                                                            {el.query}
-                                                        </div>
-                                                    )
-                                                })
-                                            }
-                                        </div>
-                                    </div>
-                                </>
-                            ): null
-                        }
-
+                <div className="collapse-content" ref={divRef} >
+                    <div className="divider"></div>
+                    <div className="newsHeader">
+                        <div className="a">Tin tức liên quan</div>
+                        <div className="b">Xem thêm</div>
                     </div>
-                
+                    <div className="carousel">
+                        <div className="buttonLeft" style={{visibility:currentIndex > 0?'visible':'hidden'}}>
+                            <div className="buttonInside" onClick={() => prevItem()}><ArrowLeft/></div>
+                        </div>
+                        <div className="newsContainer">
+
+                            <div 
+                                className="newsList"         
+                                style={{
+                                    transform: `translateX(${translateX}px)`,
+                                    transition: 'transform 0.3s ease',
+                                }}
+                                ref={containerRef}
+                            >
+                                {
+                                    props.data.articles.map((el,index) => {
+                                        return(
+                                            <div className="newsItems" key={index}>
+                                                <div className="titleNews">
+                                                    <div className="source">
+                                                        <span className="sourceNews">{el.source}</span>
+                                                        <span style={{opacity:'0.5'}}> • </span>
+                                                        <span className="sourceTime">{el.timeAgo}</span>
+                                                    </div>
+                                                    <div className="title">{el.title}</div>
+                                                </div>
+                                                {el.image?<img src={el.image.imageUrl}/>:null}
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
+                        </div>
+                        <div className="buttonRight" style={{visibility: props.data.articles.length > 2 ? (currentIndex === props.data.articles.length - 2 ? 'hidden': 'visible'):'hidden'}}>
+                            <div className="buttonInside" onClick={() => nextItem()}><ArrowRight/></div>
+                        </div>
+                    </div>
+                    
+                    {
+                        props.data.relatedQueries.length > 0 ? (
+                            <>
+                                <div className="divider"></div>
+                                <div className="connection">
+                                    <div className="text">Từ khóa liên quan</div>
+                                    <div className="relativeKeys">
+                                        {
+                                            props.data.relatedQueries.map((el, index) => {
+                                                return(
+                                                    <div key={index} className="relativeKey">
+                                                        {el.query}
+                                                    </div>
+                                                )
+                                            })
+                                        }
+                                    </div>
+                                </div>
+                            </>
+                        ): null
+                    }
+
+                </div>
             </div>
         </div>
     )
