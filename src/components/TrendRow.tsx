@@ -41,6 +41,11 @@ const TrendsRow: React.FC<TrendsRow> = (props) => {
     const itemWidth = 348;
 
     const translateX = -currentIndex * itemWidth;
+
+    function decodeHTMLEntities(input:string) {
+        var doc = new DOMParser().parseFromString(input, "text/html");
+        return doc.documentElement.textContent;
+      }
     
     return(
         <div className="trendsRow">
@@ -86,10 +91,10 @@ const TrendsRow: React.FC<TrendsRow> = (props) => {
                                                 <div className="titleNews">
                                                     <div className="source">
                                                         <span className="sourceNews">{el.source}</span>
-                                                        <span style={{opacity:'0.5'}}> • </span>
+                                                        <span style={{opacity:'0.5',fontSize:'11px'}}> · </span>
                                                         <span className="sourceTime">{el.timeAgo}</span>
                                                     </div>
-                                                    <div className="title">{el.title}</div>
+                                                    <div className="title">{decodeHTMLEntities(el.title)}</div>
                                                 </div>
                                                 {el.image?<img src={el.image.imageUrl}/>:null}
                                             </div>

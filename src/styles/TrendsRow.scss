@@ -2,11 +2,14 @@
 .trendsRow{
     width: 744px;
     border-radius: 8px;
-    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 20px 0 20px 0;
+    border: 1px solid #D9D9D9;
+    &:hover{
+        box-shadow:  0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+    }
     .trendsRowContainer{
         width: 100%;
         display: flex;
@@ -50,7 +53,7 @@
             }
         }
         .searchContinued{
-            width: 148px;
+            width: 132px;
             border-radius: 8px;
             padding: 10px 16px 10px 16px;
             display: flex;
@@ -69,7 +72,7 @@
         }
     }
     .collapse-container{
-        width: 107%;
+        width: 112.5%;
         transition: 0.4s max-height;
         overflow: hidden;
         .collapse-content{
@@ -80,12 +83,12 @@
             .divider{
                 border-top: 1px solid #dbdbdb;
                 width: 744px;
-                margin-left: 26px;
+                margin-left: 46px;
             }
             .newsHeader{
                 margin-top: 32px;
-                margin-left: 35px;
-                margin-right: 35px;
+                margin-left: 66px;
+                margin-right: 66px;
                 display: flex;
                 .a{
                     font-family: Inter;
@@ -120,6 +123,8 @@
                     background: none;
                     margin-left: 5px;
                     cursor: pointer;
+                    z-index: 2;
+                    transform: translateX(20px);
                     .buttonInside{
                         height: 40px;
                         width: 40px;
@@ -141,6 +146,8 @@
                     background: none;
                     cursor: pointer;
                     margin-right: 5px;
+                    z-index: 2;
+                    transform: translateX(-20px);
                     .buttonInside{
                         height: 40px;
                         width: 40px;
@@ -159,7 +166,8 @@
                     align-items: center;
                     overflow: hidden;
                     margin-top: 20px;
-                    margin-bottom: 20px;
+                    margin-bottom: 32px;
+                    margin-left: 16px;
                     .newsList{
                         display: flex;
                         gap: 16px;
@@ -187,9 +195,13 @@
                                     line-height: 22px;
                                     letter-spacing: 0.25px;
                                     text-align: left;
+                                    
                                 }
                                 .source{
                                     color: #5A5A5A;
+                                    width: 100%;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
                                     .sourceNews{
                                         font-size: 11px;
                                         line-height: 16px;
@@ -199,9 +211,9 @@
                                     }
                                     .sourceTime{
                                         font-family: Inter;
-                                        font-size: 12px;
+                                        font-size: 11px;
                                         font-weight: 400;
-                                        line-height: 22px;
+                                        line-height: 16px;
                                         letter-spacing: 0.15000000596046448px;
                                     }
                                 }
@@ -214,7 +226,7 @@
             .connection{
                 .text{
                     margin-top: 32px;
-                    margin-left: 35px;
+                    margin-left: 66px;
                     font-family: Inter;
                     font-size: 16px;
                     font-weight: 500;
@@ -226,7 +238,9 @@
                     display: flex;
                     height: 100%;
                     flex-wrap: wrap;
-                    padding-left: 35px;
+                    padding-left: 56px;
+                    padding-bottom: 30px;
+                    padding-top: 16px;
                     .relativeKey{
                         padding: 8px;
                         border: 1px solid rgb(207, 207, 207);

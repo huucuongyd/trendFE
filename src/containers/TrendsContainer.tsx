@@ -10,7 +10,7 @@ const TrendsContainer: React.FC<unknown> = () => {
     const [trends, setTrends] = useState<ResponseData>();
 
     useEffect(() => {
-        axios.get('http://192.168.1.13:3001/google-trends/trending-searches')
+        axios.get('https://trends-api.weoja.dev/daily-searches?geo=VN&lang=vi&key=81dc9bdb52d04dc20036dbd8313ed055')
       .then((response) => {
         setTrends(response.data.default);
       })
